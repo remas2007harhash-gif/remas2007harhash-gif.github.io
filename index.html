@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRS EcoSmoking Hub</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --gold: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 0.75rem;
+            color: #a7f3d0;
+            background: rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+
+        /* Banner Notice */
+        .notice-banner {
+            border: 1px solid var(--gold);
+            background: rgba(245, 158, 11, 0.05);
+            color: var(--gold);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Level & XP Card */
+        .level-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 15px 20px;
+        }
+
+        .level-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .level-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .xp-text {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .progress-bar-bg {
+            background-color: #334155;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+            width: 45%;
+        }
+
+        /* Navigation Buttons Grid */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background-color: var(--card-bg);
+            border: 1px solid #334155;
+            color: var(--text-main);
+            padding: 10px 5px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: all 0.2s;
+        }
+
+        .nav-btn.active {
+            background-color: var(--accent-green);
+            border-color: var(--accent-green);
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Dashboard Cards */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .card-value {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card-status {
+            color: var(--accent-green);
+            font-size: 0.85rem;
+        }
+
+        /* Two Column Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .action-btn {
+            background-color: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            margin-top: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .action-btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>GRS EcoSmoking Hub</h1>
+            <p>Wireless Gamified Health & Environment Hub</p>
+        </header>
+
+        <!-- Banner -->
+        <div class="notice-banner">
+            🌐 هذه النسخة مخصصة للتحكيم والتجربة التفاعلية أونلاين (Live Simulation Mode)
+        </div>
+
+        <!-- Level Card -->
+        <div class="level-card">
+            <div class="level-header">
+                <span class="xp-text">XP 1000 / 450</span>
+                <span class="level-title">🎖️ المستوى: 2 (مُكافح واعي)</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="nav-grid">
+            <button class="nav-btn">🤖 AI Coach</button>
+            <button class="nav-btn">🏆 الإنجازات</button>
+            <button class="nav-btn active">🏠 المراقبة الحية</button>
+            <button class="nav-btn">📊 الإحصائيات</button>
+            <button class="nav-btn">😊 المزاج</button>
+        </div>
+
+        <!-- Air Quality Card -->
+        <div class="card">
+            <div class="card-title">مؤشر جودة الهواء (AQI)</div>
+            <div class="card-value" id="aqi-val">42</div>
+            <div class="card-status">ممتاز (Good)</div>
+        </div>
+
+        <!-- Gas & Cigarettes Grid -->
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">تركيز الغاز</div>
+                <div class="card-value" style="font-size: 1.4rem;" id="gas-val">PPM 120</div>
+                <button class="action-btn" onclick="simulateSmoke()">محاكاة تصاعد دخان 🚬</button>
+            </div>
+            <div class="card">
+                <div class="card-title">سجائر اليوم</div>
+                <div class="card-value" style="font-size: 1.4rem;">10 / 2</div>
+            </div>
+        </div>
+
+        <!-- Temp & Humidity Grid -->
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">الحرارة</div>
+                <div class="card-value" style="font-size: 1.3rem;">24°C</div>
+            </div>
+            <div class="card">
+                <div class="card-title">الرطوبة</div>
+                <div class="card-value" style="font-size: 1.3rem;">45%</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // دالة بسيطة لتجربة التفاعل عند الضغط على زر المحاكاة
+        function simulateSmoke() {
+            const gasElem = document.getElementById('gas-val');
+            const aqiElem = document.getElementById('aqi-val');
+            
+            let currentGas = 400;
+            gasElem.innerText = `PPM ${currentGas}`;
+            gasElem.style.color = '#ef4444';
+            
+            aqiElem.innerText = "155";
+            aqiElem.nextElementSibling.innerText = "ملوث (Unhealthy)";
+            aqiElem.nextElementSibling.style.color = '#ef4444';
+
+            setTimeout(() => {
+                gasElem.innerText = "PPM 120";
+                gasElem.style.color = "white";
+                aqiElem.innerText = "42";
+                aqiElem.nextElementSibling.innerText = "ممتاز (Good)";
+                aqiElem.nextElementSibling.style.color = "#10b981";
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
